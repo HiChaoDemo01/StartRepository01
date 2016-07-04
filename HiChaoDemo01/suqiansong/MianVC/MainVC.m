@@ -89,7 +89,7 @@
   
     
 }
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
     _topPC.currentPage = scrollView.contentOffset.x/kMainBoundsW;
     
