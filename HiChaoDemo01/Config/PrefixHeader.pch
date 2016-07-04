@@ -25,6 +25,7 @@
 #import "HiChaoVC.h"
 #import "ShoppingCarVC.h"
 #import "SQSRequest.h"
+#import "UIButton+WebCache.h"
 
 //#import "ASIHTTPRequest.h"
 #pragma mark - 头文件

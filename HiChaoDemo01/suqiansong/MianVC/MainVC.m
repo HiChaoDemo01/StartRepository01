@@ -50,12 +50,12 @@
 - (void)createTopScrollView {
     
     UIView *bgView = [[UIView alloc]init];
-    bgView.backgroundColor = [UIColor redColor];
+    bgView.backgroundColor = [UIColor clearColor];
     bgView.frame = CGRectMake(0, 0, kMainBoundsW, 300);
     [_bgScrollVIew addSubview:bgView];
     //创建topscroView
     UIScrollView *topScrollView = [[UIScrollView alloc]init];
-       topScrollView.backgroundColor = [UIColor redColor];
+
     topScrollView.frame =CGRectMake(0, 0, kMainBoundsW, 300);
     topScrollView.showsHorizontalScrollIndicator = NO;
     topScrollView.delegate = self;
@@ -68,11 +68,11 @@
         
         for (NSInteger i = 0; i < imageArray.count; i++) {
             
-            UIImageView *imageView = [[UIImageView alloc]init];
-            imageView.frame = CGRectMake(kMainBoundsW *i , 0, kMainBoundsW, 300);
-            [imageView sd_setImageWithURL:[NSURL URLWithString:_topImageArr[i]]];
+           UIButton *imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            imageButton.frame = CGRectMake(kMainBoundsW *i , 0, kMainBoundsW, 300);
+            [imageButton sd_setBackgroundImageWithURL:[NSURL URLWithString:_topImageArr[i]] forState:UIControlStateNormal];
             
-            [topScrollView addSubview:imageView];
+            [topScrollView addSubview:imageButton];
             
         }
         UIPageControl *topPC = [[UIPageControl alloc]initWithFrame:CGRectMake(50, 280, 300, 20)];
@@ -104,6 +104,11 @@
     
     
 }
+
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning {
