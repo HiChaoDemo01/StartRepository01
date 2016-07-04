@@ -8,7 +8,17 @@
 
 #import "MainVC.h"
 
-@interface MainVC ()
+@interface MainVC ()<UIScrollViewDelegate>
+{
+    UIScrollView *_topScrollView;
+    UIPageControl *_topPC;
+    
+    
+    
+}
+
+@property (weak, nonatomic) IBOutlet UIScrollView *bgScrollVIew;
+@property (nonatomic,strong)NSMutableArray *topImageArr;
 
 @end
 
@@ -17,9 +27,84 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+   
     
-    self.view.backgroundColor = [UIColor greenColor];
+    [self createTopScrollView];
+    
 }
+
+#pragma mark----懒加载初始化数组
+- (NSMutableArray *)topImageArr {
+    
+    if (!_topImageArr) {
+        
+        
+        _topImageArr = [NSMutableArray array];
+    }
+    
+    return _topImageArr;
+   
+}
+                                 
+
+- (void)createTopScrollView {
+    
+    UIView *bgView = [[UIView alloc]init];
+    bgView.backgroundColor = [UIColor redColor];
+    bgView.frame = CGRectMake(0, 0, kMainBoundsW, 300);
+    [_bgScrollVIew addSubview:bgView];
+    //创建topscroView
+    UIScrollView *topScrollView = [[UIScrollView alloc]init];
+       topScrollView.backgroundColor = [UIColor redColor];
+    topScrollView.frame =CGRectMake(0, 0, kMainBoundsW, 300);
+    topScrollView.showsHorizontalScrollIndicator = NO;
+    topScrollView.delegate = self;
+    topScrollView.pagingEnabled = YES;
+    [bgView addSubview:topScrollView];
+    _topScrollView = topScrollView;
+    [SQSRequest sendRequestForMianVcTopScrollViewImage:^(NSArray *imageArray) {
+        [self.topImageArr addObjectsFromArray:imageArray];
+        topScrollView.contentSize = CGSizeMake(kMainBoundsW *_topImageArr.count, 0);
+        
+        for (NSInteger i = 0; i < imageArray.count; i++) {
+            
+            UIImageView *imageView = [[UIImageView alloc]init];
+            imageView.frame = CGRectMake(kMainBoundsW *i , 0, kMainBoundsW, 300);
+            [imageView sd_setImageWithURL:[NSURL URLWithString:_topImageArr[i]]];
+            
+            [topScrollView addSubview:imageView];
+            
+        }
+        UIPageControl *topPC = [[UIPageControl alloc]initWithFrame:CGRectMake(50, 280, 300, 20)];
+        topPC.numberOfPages = _topImageArr.count;
+
+        topPC.currentPageIndicatorTintColor = [UIColor redColor];
+        [topPC addTarget:self action:@selector(changeTopScrollViewImage) forControlEvents:UIControlEventValueChanged];
+        
+        [bgView addSubview:topPC];
+        _topPC = topPC;
+        
+    }];
+    
+  
+    
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    
+    _topPC.currentPage = scrollView.contentOffset.x/kMainBoundsW;
+    
+    
+    
+    
+}
+- (void)changeTopScrollViewImage {
+    
+    
+    _topScrollView.contentOffset = CGPointMake(_topPC.currentPage * kMainBoundsW, 0);
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
