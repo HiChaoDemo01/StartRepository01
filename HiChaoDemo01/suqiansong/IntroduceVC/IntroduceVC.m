@@ -16,16 +16,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+    //创建引导页视图
+    
+    [self createView];
+    //延时调用进入主界面
+    [self performSelector:@selector(btnClick:) withObject:nil afterDelay:1.5];
 
     
-    UIButton *btn =[UIButton buttonWithType:UIButtonTypeSystem];
-    btn.frame=CGRectMake(100, 100, 100, 100);
-    btn.backgroundColor=[UIColor redColor];
-    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
     
+    
+    }
 
+- (void)createView {
+    
+    //发送请求引导页图片
+    
+        [SQSRequest sendRequestFroIntroduceImage:^(NSString *imageUrl) {
+            
+            UIImageView *bgImage = [[UIImageView alloc]initWithFrame:kMainBounds];
+            if ([imageUrl isEqualToString:@""]) {
+                
+                bgImage.image = [UIImage imageNamed:@"960-640-1"];
+                
+            } else {
+                
+                [bgImage sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
+                
+            }
+            
+            
+            [self.view addSubview:bgImage];
+            
+        }];
+    
+    
 }
 
 - (void)didEnterRootVC:(DidSelectedEnter)newBlock {
@@ -34,14 +59,13 @@
     
     self.block = newBlock;
 }
+
+
 - (void)btnClick:(UIButton *)sender {
     
     self.block();
-    
-    
-    
-    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

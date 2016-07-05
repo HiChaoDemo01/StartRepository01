@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0400442B1D2B5D6B008066AC /* SQSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0400442A1D2B5D6B008066AC /* SQSRequest.m */; };
+		0400442E1D2B5DE3008066AC /* SQSTimelimitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0400442D1D2B5DE3008066AC /* SQSTimelimitModel.m */; };
+		040044301D2B5E2B008066AC /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0400442F1D2B5E2B008066AC /* MainVC.xib */; };
 		041F01501D28432900BD62E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 041F014F1D28432900BD62E0 /* main.m */; };
 		041F01531D28432900BD62E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 041F01521D28432900BD62E0 /* AppDelegate.m */; };
 		041F01591D28432900BD62E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041F01571D28432900BD62E0 /* Main.storyboard */; };
@@ -47,6 +50,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040044291D2B5D6B008066AC /* SQSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQSRequest.h; sourceTree = "<group>"; };
+		0400442A1D2B5D6B008066AC /* SQSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQSRequest.m; sourceTree = "<group>"; };
+		0400442C1D2B5DE3008066AC /* SQSTimelimitModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQSTimelimitModel.h; sourceTree = "<group>"; };
+		0400442D1D2B5DE3008066AC /* SQSTimelimitModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQSTimelimitModel.m; sourceTree = "<group>"; };
+		0400442F1D2B5E2B008066AC /* MainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
 		041F014B1D28432900BD62E0 /* HiChaoDemo01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiChaoDemo01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		041F014F1D28432900BD62E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		041F01511D28432900BD62E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -166,6 +174,8 @@
 		041F01651D28438E00BD62E0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0400442C1D2B5DE3008066AC /* SQSTimelimitModel.h */,
+				0400442D1D2B5DE3008066AC /* SQSTimelimitModel.m */,
 				042C8F3D1D2A013B00C290A3 /* CommunityScrollDataModel.h */,
 				042C8F3E1D2A013B00C290A3 /* CommunityScrollDataModel.m */,
 			);
@@ -199,6 +209,8 @@
 		041F016A1D28443900BD62E0 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				040044291D2B5D6B008066AC /* SQSRequest.h */,
+				0400442A1D2B5D6B008066AC /* SQSRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -280,6 +292,7 @@
 			children = (
 				041F01AB1D28960600BD62E0 /* MainVC.h */,
 				041F01AC1D28960600BD62E0 /* MainVC.m */,
+				0400442F1D2B5E2B008066AC /* MainVC.xib */,
 			);
 			path = MianVC;
 			sourceTree = "<group>";
@@ -410,6 +423,7 @@
 				041F02051D28DE4400BD62E0 /* button_massage@3x.png in Resources */,
 				041F01F51D28DE4400BD62E0 /* 960-640-1.png in Resources */,
 				041F015E1D28432900BD62E0 /* LaunchScreen.storyboard in Resources */,
+				040044301D2B5E2B008066AC /* MainVC.xib in Resources */,
 				041F02081D28DE4400BD62E0 /* icon_shopping64x64on@2x.png in Resources */,
 				041F02161D28E66100BD62E0 /* bottom_clothes_icon@2x.png in Resources */,
 				041F01FF1D28DE4400BD62E0 /* bottom_home_icon_on@2x.png in Resources */,
@@ -485,11 +499,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0400442E1D2B5DE3008066AC /* SQSTimelimitModel.m in Sources */,
 				041F019E1D28954900BD62E0 /* ShoppingCarVC.m in Sources */,
 				041F01AD1D28960600BD62E0 /* MainVC.m in Sources */,
 				042C8F3F1D2A013B00C290A3 /* CommunityScrollDataModel.m in Sources */,
 				041F01531D28432900BD62E0 /* AppDelegate.m in Sources */,
 				041F019B1D28953700BD62E0 /* HiChaoVC.m in Sources */,
+				0400442B1D2B5D6B008066AC /* SQSRequest.m in Sources */,
 				041F01981D28952300BD62E0 /* CommunityVC.m in Sources */,
 				041F01AA1D2895F900BD62E0 /* MatchVC.m in Sources */,
 				041F01A41D2895BF00BD62E0 /* IntroduceVC.m in Sources */,
