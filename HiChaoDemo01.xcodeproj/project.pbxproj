@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0400441E1D2AC3BC008066AC /* SQSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0400441D1D2AC3BC008066AC /* SQSRequest.m */; };
 		040044221D2AD41E008066AC /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040044211D2AD41E008066AC /* MainVC.xib */; };
+		040044251D2B1FC7008066AC /* SQSTimelimitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 040044241D2B1FC7008066AC /* SQSTimelimitModel.m */; };
 		041F01501D28432900BD62E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 041F014F1D28432900BD62E0 /* main.m */; };
 		041F01531D28432900BD62E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 041F01521D28432900BD62E0 /* AppDelegate.m */; };
 		041F01591D28432900BD62E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041F01571D28432900BD62E0 /* Main.storyboard */; };
@@ -50,6 +51,8 @@
 		0400441C1D2AC3BC008066AC /* SQSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQSRequest.h; sourceTree = "<group>"; };
 		0400441D1D2AC3BC008066AC /* SQSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQSRequest.m; sourceTree = "<group>"; };
 		040044211D2AD41E008066AC /* MainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
+		040044231D2B1FC7008066AC /* SQSTimelimitModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQSTimelimitModel.h; sourceTree = "<group>"; };
+		040044241D2B1FC7008066AC /* SQSTimelimitModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQSTimelimitModel.m; sourceTree = "<group>"; };
 		041F014B1D28432900BD62E0 /* HiChaoDemo01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiChaoDemo01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		041F014F1D28432900BD62E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		041F01511D28432900BD62E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 		041F01651D28438E00BD62E0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				040044231D2B1FC7008066AC /* SQSTimelimitModel.h */,
+				040044241D2B1FC7008066AC /* SQSTimelimitModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				041F01981D28952300BD62E0 /* CommunityVC.m in Sources */,
 				041F01AA1D2895F900BD62E0 /* MatchVC.m in Sources */,
 				041F01A41D2895BF00BD62E0 /* IntroduceVC.m in Sources */,
+				040044251D2B1FC7008066AC /* SQSTimelimitModel.m in Sources */,
 				041F01501D28432900BD62E0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

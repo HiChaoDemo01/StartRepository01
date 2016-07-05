@@ -17,12 +17,12 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkf-O9-WDW">
-                    <rect key="frame" x="-6" y="-7" width="420" height="730"/>
+                    <rect key="frame" x="-6" y="-11" width="420" height="730"/>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-            <point key="canvasLocation" x="1093" y="217"/>
+            <point key="canvasLocation" x="1179" y="211"/>
         </view>
     </objects>
 </document>

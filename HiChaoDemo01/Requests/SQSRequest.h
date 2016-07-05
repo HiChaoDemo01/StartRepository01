@@ -17,6 +17,8 @@
 //发送首页的topscrollView请求图片
 + (void)sendRequestForMianVcTopScrollViewImage:(void(^)(NSArray *imageArray))complete;
 
++ (void)sendRequestForTimelimitInfo:(void(^)(NSArray *infoArr))complete;
+
 
 
 @end
